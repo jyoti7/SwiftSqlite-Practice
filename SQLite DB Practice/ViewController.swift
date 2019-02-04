@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import SQLite
 
 class ViewController: UIViewController {
 
+    var database: Connection!//Global DB
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do{
+            //we create a storage loc user database table, use file manager loc in the app
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileUrl = documentDirectory.appendingPathComponent("users").appendingPathExtension("sqlite3")
+            //Connection DB
+            let database = try Connection(fileUrl.path)
+            self.database = database //assign as Global DB
+        }
+        catch{
+            print(error)
+        }
         
     }
 
@@ -22,7 +37,7 @@ class ViewController: UIViewController {
     @IBAction func insertUser(_ sender: Any) {
          print("Insert user Tapped")
         
-        /*For popup Alert with textField*/
+        /*For insert popup Alert with textField*/
         let alert = UIAlertController(title: "Insert User", message: nil, preferredStyle: .alert)
         alert.addTextField { (tf) in tf.placeholder = "Insert Name"}
         alert.addTextField { (tf) in tf.placeholder = "Insert E-mail"}
@@ -43,10 +58,10 @@ class ViewController: UIViewController {
     @IBAction func listUsers(_ sender: Any) {
         print("List users Tapped")
     }
-    
+    /*For update popup Alert with textField*/
     @IBAction func updateUser(_ sender: Any) {
         print("Update user Tapped")
-        /*For popup Alert with textField*/
+        
         let alert = UIAlertController(title: "Update User", message: nil, preferredStyle: .alert)
         alert.addTextField { (tf) in tf.placeholder = "Insert Name"}
         alert.addTextField { (tf) in tf.placeholder = "Insert E-mail"}
@@ -61,7 +76,7 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-    
+    /*For delete popup Alert with textField*/
     @IBAction func deleteUser(_ sender: Any) {
         print("Delete user Tapped")
         
