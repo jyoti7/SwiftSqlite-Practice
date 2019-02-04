@@ -18,48 +18,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUa-HH-nKe">
-                                <rect key="frame" x="138" y="109" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsx-fi-Jcm">
-                                <rect key="frame" x="150" y="150" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-u5-0rI">
-                                <rect key="frame" x="150" y="189" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmk-Mc-jNZ">
-                                <rect key="frame" x="150" y="240" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFz-oi-mon">
-                                <rect key="frame" x="150" y="269" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a05-vs-hhO">
+                                <rect key="frame" x="87.5" y="113" width="200" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="5wl-6y-3YA"/>
+                                    <constraint firstAttribute="height" constant="50" id="LnU-2o-4au"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Create User Table">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="createTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyW-Sb-38R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-0X-tVQ">
+                                <rect key="frame" x="87.5" y="193" width="200" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Insert User">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="insertUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1rj-Pe-CA6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-uL-xtj">
+                                <rect key="frame" x="87.5" y="273" width="200" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="List User">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="listUsers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KF4-yg-ZPw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwg-KA-GZv">
+                                <rect key="frame" x="87.5" y="353" width="200" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Update User">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PSb-TX-ktb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuF-9G-Bc8">
+                                <rect key="frame" x="87.5" y="433" width="200" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Delete User">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FAV-bj-L8O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99591229397299097" blue="0.39526671344832043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LzM-0X-tVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9PU-RP-8Hc"/>
+                            <constraint firstItem="LzM-0X-tVQ" firstAttribute="width" secondItem="a05-vs-hhO" secondAttribute="width" id="E2P-a7-wp7"/>
+                            <constraint firstItem="LzM-0X-tVQ" firstAttribute="top" secondItem="a05-vs-hhO" secondAttribute="bottom" constant="30" id="EZz-rA-zrW"/>
+                            <constraint firstItem="BuF-9G-Bc8" firstAttribute="top" secondItem="Uwg-KA-GZv" secondAttribute="bottom" constant="30" id="Fnd-yD-03a"/>
+                            <constraint firstItem="cXY-uL-xtj" firstAttribute="height" secondItem="LzM-0X-tVQ" secondAttribute="height" id="Gjs-pf-Zlm"/>
+                            <constraint firstItem="Uwg-KA-GZv" firstAttribute="height" secondItem="cXY-uL-xtj" secondAttribute="height" id="Imj-MS-CQh"/>
+                            <constraint firstItem="BuF-9G-Bc8" firstAttribute="width" secondItem="Uwg-KA-GZv" secondAttribute="width" id="JIS-uy-9Rq"/>
+                            <constraint firstItem="Uwg-KA-GZv" firstAttribute="width" secondItem="cXY-uL-xtj" secondAttribute="width" id="LA0-FW-7eB"/>
+                            <constraint firstItem="cXY-uL-xtj" firstAttribute="top" secondItem="LzM-0X-tVQ" secondAttribute="bottom" constant="30" id="Lg8-3s-Iex"/>
+                            <constraint firstItem="LzM-0X-tVQ" firstAttribute="height" secondItem="a05-vs-hhO" secondAttribute="height" id="OXd-hZ-eWR"/>
+                            <constraint firstItem="cXY-uL-xtj" firstAttribute="width" secondItem="LzM-0X-tVQ" secondAttribute="width" id="RPO-o0-y0B"/>
+                            <constraint firstItem="Uwg-KA-GZv" firstAttribute="top" secondItem="cXY-uL-xtj" secondAttribute="bottom" constant="30" id="S71-uu-nKs"/>
+                            <constraint firstItem="a05-vs-hhO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="93" id="TfP-mi-Wlt"/>
+                            <constraint firstItem="BuF-9G-Bc8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vd4-jW-ZDM"/>
+                            <constraint firstItem="BuF-9G-Bc8" firstAttribute="height" secondItem="Uwg-KA-GZv" secondAttribute="height" id="XWk-HI-epY"/>
+                            <constraint firstItem="a05-vs-hhO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f4y-rR-n4h"/>
+                            <constraint firstItem="cXY-uL-xtj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mPu-5i-Vas"/>
+                            <constraint firstItem="Uwg-KA-GZv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sDY-99-M8f"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="423" y="39"/>
         </scene>
     </scenes>
 </document>
