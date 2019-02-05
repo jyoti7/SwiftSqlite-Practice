@@ -63,7 +63,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="updateUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PSb-TX-ktb"/>
+                                    <action selector="updateUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CYx-KV-NmD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuF-9G-Bc8">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="39"/>
+            <point key="canvasLocation" x="-703" y="20"/>
         </scene>
     </scenes>
 </document>
