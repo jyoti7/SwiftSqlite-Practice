@@ -55,32 +55,111 @@ class ViewController: UIViewController {
     @IBAction func insertUser(_ sender: Any) {
          print("Insert user Tapped")
 
-        /*For insert popup Alert with textField*/
-        let alert = UIAlertController(title: "Insert User", message: nil, preferredStyle: .alert)
-        alert.addTextField { (tf) in tf.placeholder = "Insert Name"}
-        alert.addTextField { (tf) in tf.placeholder = "Insert E-mail"}
-        let action = UIAlertAction (title: "SUBMIT", style: .default) {(_) in
-            guard let name = alert.textFields?.first?.text,
-                let email = alert.textFields?.last?.text
-                else {return}
-            print(name)
-            print(email)
-
-            //catched value passing to database table
-            let insertUser = self.user_Table.insert(self.name <- name, self.email <- email)
-            
-            do{
-                try self.database.run(insertUser)
-                print("INSERTED USER")
-            }catch{
-                
-                print(error)
-            }
-        }
+//        /*For insert popup Alert with textField*/
+//        let alert = UIAlertController(title: "Insert User", message: nil, preferredStyle: .alert)
+//        alert.addTextField { (tf) in tf.placeholder = "Insert Name"}
+//        alert.addTextField { (tf) in tf.placeholder = "Insert E-mail"}
+//
+//
+//        let action = UIAlertAction (title: "SUBMIT", style: .default) {(_) in
+//             guard let name = alert.textFields?.first?.text?.isEmpty.description,
+//                let email = alert.textFields?.last?.text?.isEmpty.description
+//                else {return}
         
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+//            let name = alert.textFields?.first?.text
+//            let email = alert.textFields?.last?.text
+//            // Check if required fields are not empty
+//            if (name?.isEmpty)! || (email?.isEmpty)!
+//            {
+//                // Display alert message here
+//                print("User name \(String(describing: name)) or password \(String(describing: email)) is empty")
+//                return
+//            }
+//            print(name)
+//            print(email)
+//
+//
+//            //catched value passing to database table
+//            let insertUser = self.user_Table.insert(self.name <- name, self.email <- email)
+//
+//            do{
+//                try self.database.run(insertUser)
+//                print("INSERTED USER")
+//            }catch{
+//
+//                print(error)
+//            }
+//        }
+//
+//        alert.addAction(action)
+//        present(alert, animated: true, completion: nil)
 
+        
+        var name = ""
+        var email = ""
+        var one = 0, two = 0
+        
+        let alert = UIAlertController(title: "INSERT User", message: nil, preferredStyle: .alert)
+        
+        //Action ready
+        alert.addAction(UIAlertAction(title:"CANCEL", style: .cancel, handler: nil))
+        
+        let saveAction = UIAlertAction(title: "SAVE", style: .destructive, handler: { (action) -> Void in
+            if (name != "" && email != ""){
+                let insertUser = self.user_Table.insert(self.name <- name, self.email <- email)
+                
+                            do{
+                                try self.database.run(insertUser)
+                                print("INSERTED USER")
+                            }catch{
+                
+                                print(error)
+                            }
+            }
+        })
+        
+        alert.addAction(saveAction)
+        saveAction.isEnabled = false
+        
+        // textfield ready
+        alert.addTextField(configurationHandler: { (textField) in
+            textField.placeholder = "Name"
+            textField.text = ""
+            
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main) { (notification) in
+                
+                one = textField.text!.count
+                name = textField.text!
+                
+                
+                if(one > 0 && two > 0){
+                    saveAction.isEnabled = textField.text!.count > 0
+                }
+                
+            }
+        })
+        alert.addTextField(configurationHandler: { (textField) in
+            
+            textField.placeholder = "Email"
+            textField.text = ""
+           
+            
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main) { (notification) in
+                two = textField.text!.count
+                email = textField.text!
+                
+                if(one > 0 && two > 0){
+                    saveAction.isEnabled = textField.text!.count > 0
+                    
+                }
+                
+                
+                
+            }
+            
+        })
+        
+        present(alert, animated: true, completion: nil)
     }
     
     
