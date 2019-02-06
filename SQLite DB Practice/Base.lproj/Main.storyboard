@@ -77,27 +77,43 @@
                                     <action selector="deleteUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FAV-bj-L8O"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWG-36-chr">
+                                <rect key="frame" x="87.5" y="508" width="200" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Reset Table">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetTable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vcX-Ac-e8P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99591229397299097" blue="0.39526671344832043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LzM-0X-tVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9PU-RP-8Hc"/>
+                            <constraint firstItem="KWG-36-chr" firstAttribute="height" secondItem="BuF-9G-Bc8" secondAttribute="height" id="3yt-tx-p6a"/>
+                            <constraint firstItem="KWG-36-chr" firstAttribute="width" secondItem="BuF-9G-Bc8" secondAttribute="width" id="DEZ-UI-qUv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KWG-36-chr" secondAttribute="bottom" constant="109" id="Dqa-f3-lZS"/>
                             <constraint firstItem="LzM-0X-tVQ" firstAttribute="width" secondItem="a05-vs-hhO" secondAttribute="width" id="E2P-a7-wp7"/>
+                            <constraint firstItem="KWG-36-chr" firstAttribute="top" secondItem="BuF-9G-Bc8" secondAttribute="bottom" constant="25" id="EXk-pC-Pcv"/>
                             <constraint firstItem="LzM-0X-tVQ" firstAttribute="top" secondItem="a05-vs-hhO" secondAttribute="bottom" constant="30" id="EZz-rA-zrW"/>
                             <constraint firstItem="BuF-9G-Bc8" firstAttribute="top" secondItem="Uwg-KA-GZv" secondAttribute="bottom" constant="30" id="Fnd-yD-03a"/>
                             <constraint firstItem="cXY-uL-xtj" firstAttribute="height" secondItem="LzM-0X-tVQ" secondAttribute="height" id="Gjs-pf-Zlm"/>
                             <constraint firstItem="Uwg-KA-GZv" firstAttribute="height" secondItem="cXY-uL-xtj" secondAttribute="height" id="Imj-MS-CQh"/>
                             <constraint firstItem="BuF-9G-Bc8" firstAttribute="width" secondItem="Uwg-KA-GZv" secondAttribute="width" id="JIS-uy-9Rq"/>
+                            <constraint firstItem="BuF-9G-Bc8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jkh-SI-FP5"/>
                             <constraint firstItem="Uwg-KA-GZv" firstAttribute="width" secondItem="cXY-uL-xtj" secondAttribute="width" id="LA0-FW-7eB"/>
                             <constraint firstItem="cXY-uL-xtj" firstAttribute="top" secondItem="LzM-0X-tVQ" secondAttribute="bottom" constant="30" id="Lg8-3s-Iex"/>
                             <constraint firstItem="LzM-0X-tVQ" firstAttribute="height" secondItem="a05-vs-hhO" secondAttribute="height" id="OXd-hZ-eWR"/>
                             <constraint firstItem="cXY-uL-xtj" firstAttribute="width" secondItem="LzM-0X-tVQ" secondAttribute="width" id="RPO-o0-y0B"/>
                             <constraint firstItem="Uwg-KA-GZv" firstAttribute="top" secondItem="cXY-uL-xtj" secondAttribute="bottom" constant="30" id="S71-uu-nKs"/>
                             <constraint firstItem="a05-vs-hhO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="93" id="TfP-mi-Wlt"/>
-                            <constraint firstItem="BuF-9G-Bc8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vd4-jW-ZDM"/>
+                            <constraint firstItem="a05-vs-hhO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vab-IN-pZ2"/>
                             <constraint firstItem="BuF-9G-Bc8" firstAttribute="height" secondItem="Uwg-KA-GZv" secondAttribute="height" id="XWk-HI-epY"/>
-                            <constraint firstItem="a05-vs-hhO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f4y-rR-n4h"/>
-                            <constraint firstItem="cXY-uL-xtj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mPu-5i-Vas"/>
-                            <constraint firstItem="Uwg-KA-GZv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sDY-99-M8f"/>
+                            <constraint firstItem="LzM-0X-tVQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aUr-CC-ji2"/>
+                            <constraint firstItem="cXY-uL-xtj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="isd-aJ-7eq"/>
+                            <constraint firstItem="KWG-36-chr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="laS-pN-mCh"/>
+                            <constraint firstItem="Uwg-KA-GZv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pj6-Yz-Y9K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     var database: Connection!//Global DB
     
-    let user_Table = Table("users") //initialize table
+    let user_Table = Table("USER") //initialize table
     let id = Expression<Int>("id") //create column
     let name = Expression<String>("name")
     let email = Expression<String>("email")
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         var email = ""
         var one = 0, two = 0
         
-        let alert = UIAlertController(title: "INSERT User", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "INSERT USER", message: nil, preferredStyle: .alert)
         
         //Action ready
         alert.addAction(UIAlertAction(title:"CANCEL", style: .cancel, handler: nil))
@@ -119,7 +119,7 @@ class ViewController: UIViewController {
         })
         
         alert.addAction(saveAction)
-        saveAction.isEnabled = false
+        saveAction.isEnabled = false //save button will be block
         
         // textfield ready
         alert.addTextField(configurationHandler: { (textField) in
@@ -133,7 +133,7 @@ class ViewController: UIViewController {
                 
                 
                 if(one > 0 && two > 0){
-                    saveAction.isEnabled = textField.text!.count > 0
+                    saveAction.isEnabled = one > 0
                 }
                 
             }
@@ -145,11 +145,12 @@ class ViewController: UIViewController {
            
             
             NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: textField, queue: OperationQueue.main) { (notification) in
+                
                 two = textField.text!.count
                 email = textField.text!
                 
                 if(one > 0 && two > 0){
-                    saveAction.isEnabled = textField.text!.count > 0
+                    saveAction.isEnabled = two > 0
                     
                 }
                 
@@ -238,6 +239,24 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     
     }
+    
+    
+    @IBAction func resetTable(_ sender: Any) {
+        print("reset Table Tapped")
+        
+        let resetTable = self.user_Table.delete()
+        
+        do{
+            try self.database.run(resetTable)
+            print("reset Table")
+        }catch{
+            print(error)
+        }
+        
+        
+    }
+    
+    
 }
 
 
